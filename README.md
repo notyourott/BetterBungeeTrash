@@ -2,6 +2,13 @@
 
 ---
 
+Disclaimer: 
+
+- Based of MD_5's Bungeecord (Fork of "BetterBungee") | I am not the owner of the code
+- This repo is just for fun purpose and is not ment to harm anyone
+
+---
+
 *What is dis shit ?!*
 
 - we don't do that registering shit here ^^
