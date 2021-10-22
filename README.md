@@ -52,7 +52,7 @@ Layer 7 proxy designed to Protect Minecraft servers. <- not whit trash code
 Source code is currently available on GitHub.
 
 Precompiled binaries are available
-https://github.com/~/BetterBungee/releases/download/1.04/BungeeCordSnapshot.jar
+https://github.com/FurryCryCodes/BetterBungeeTrash/releases/download/v1.0.0/CakeMC-BetterBungeeTrash-0.98-SNAPSHOT.jar
 
 # BetterBungee
 Fork of https://github.com/SpigotMC/BungeeCord <- not a real fork
