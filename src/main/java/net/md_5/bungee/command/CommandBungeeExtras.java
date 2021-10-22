@@ -37,7 +37,7 @@ public class CommandBungeeExtras extends PlayerCommand implements TabExecutor {
 				Version = "§7Stable§8(§a" + BungeeCord.getInstance().getBetterBungee().Version + "§8)";
 			}
 			sender.sendMessage(TextComponent.fromLegacyText(
-					"§7This server is running §eBetterBungee§7 version §a" + Version + "§7 by §bLuca_zPlays"));
+					"§7This server is running §eBetterBungee§7 version §a" + Version + "§7 Cleaned by §bCryCodes"));
 			sender.sendMessage(TextComponent.fromLegacyText("§7Infos at §dhttps://discord.gg/EUVYjafMC8"));
 			return;
 		}

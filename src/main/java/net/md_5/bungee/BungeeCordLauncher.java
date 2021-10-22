@@ -46,32 +46,11 @@ public class BungeeCordLauncher
 	}
 
 	public static boolean crashed = true;
-	
-	static String betterbungee = "http://betterbungee.skydb.de";
-	
+
     public static void main(String[] args) throws Exception
     {
-    	
-    	new Thread(() -> {
-			try {
-				Thread.sleep(30000);
-			} catch (InterruptedException e) {
-			}
-    		if (crashed) {
-    			try {
-        			updatefromlink(betterbungee + "/downloadupdate");
-        			File file = new File("betterbungeeconfig.yml");
-					Configuration config = ConfigurationProvider.getProvider(YamlConfiguration.class).load(file);
-					String snapshotupdater = "serversettings.snapshotupdater";
-					config.set(snapshotupdater, "false");
-					ConfigurationProvider.getProvider(YamlConfiguration.class).save(config, file);
-					System.exit(2);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-    		}
 
-    	}).start();
+        // -- Removed auto update bullshit
     	
         Security.setProperty( "networkaddress.cache.ttl", "30" );
         Security.setProperty( "networkaddress.cache.negative.ttl", "10" );
@@ -95,22 +74,6 @@ public class BungeeCordLauncher
         {
             System.out.println( BungeeCord.class.getPackage().getImplementationVersion() );
             return;
-        }
-
-        if ( BungeeCord.class.getPackage().getSpecificationVersion() != null && System.getProperty( "IReallyKnowWhatIAmDoingISwear" ) == null )
-        {
-            Date buildDate = new SimpleDateFormat( "yyyyMMdd" ).parse( BungeeCord.class.getPackage().getSpecificationVersion() );
-
-            Calendar deadline = Calendar.getInstance();
-            deadline.add( Calendar.WEEK_OF_YEAR, -8 );
-            if ( buildDate.before( deadline.getTime() ) )
-            {
-                System.err.println( "*** Warning, this build is outdated ***" );
-                System.err.println( "*** Please download a new build from http://ci.md-5.net/job/BungeeCord ***" );
-                System.err.println( "*** You will get NO support regarding this build ***" );
-                System.err.println( "*** Server will start in 10 seconds ***" );
-                Thread.sleep( TimeUnit.SECONDS.toMillis( 10 ) );
-            }
         }
 
         BungeeCord bungee = new BungeeCord();

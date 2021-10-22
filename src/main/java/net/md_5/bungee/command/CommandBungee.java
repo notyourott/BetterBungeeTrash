@@ -25,16 +25,16 @@ public class CommandBungee extends Command
 		}
         TextComponent text1 = new TextComponent();
         
-        text1.addExtra("§7This server is running §eBetterBungee§7 version §a" + Version);
-        text1.addExtra("§7 by §bLuca_zPlays");
-        text1.setClickEvent(new ClickEvent(Action.OPEN_URL, "https://github.com/LucazPlays/BetterBungee/"));
+        text1.addExtra("§7This server is running §eBetterBungeeTrash§7 version §a" + Version);
+        text1.addExtra("§7 Cleaned by §bCryCodes #FuckLuca");
+        text1.setClickEvent(new ClickEvent(Action.OPEN_URL, "https://github.com/FurryCryCodes/CakeMC-BetterBungeeTrash"));
         text1.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("Link to Github")));
 
         sender.sendMessage(text1);
         
         TextComponent text2 = new TextComponent();
-        text2.addExtra("§7More Infos at §dhttps://dsc.gg/betterbungee");
-        text2.setClickEvent(new ClickEvent(Action.OPEN_URL, "https://dsc.gg/betterbungee"));
+        text2.addExtra("§7No Infos at §dhttps://discord.gg/mcn");
+        text2.setClickEvent(new ClickEvent(Action.OPEN_URL, "https://discord.gg/mcn"));
         text2.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("Link to Discord")));
 
         sender.sendMessage(text2);

@@ -10,6 +10,12 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+
+        <plugin.shade.version>3.2.1</plugin.shade.version>
+        <plugin.compiler.version>3.8.0</plugin.compiler.version>
+        <plugin.jar.version>3.1.1</plugin.jar.version>
+        <plugin.antrun.version>1.8</plugin.antrun.version>
+        <plugin.maven-source.version>3.0.1</plugin.maven-source.version>
     </properties>
 
 
@@ -188,4 +194,52 @@
             <version>31.0.1-jre</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${plugin.shade.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${plugin.jar.version}</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Main-Class>net.md_5.bungee.Bootstrap</Main-Class>
+                            <Version>${project.version}</Version>
+                            <Implementation-Version>${version}</Implementation-Version>
+                            <Specification-Version>${name}</Specification-Version>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>${plugin.antrun.version}</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

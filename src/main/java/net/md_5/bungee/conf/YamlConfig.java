@@ -89,7 +89,7 @@ public class YamlConfig implements ConfigurationAdapter {
 
 		Map<String, Object> groups = get("groups", null);
 		if (groups == null) {
-			set("groups.Luca_zPlays", Collections.singletonList("admin"));
+			set("groups.Fuck_Luka_Du_Hurensohn_hör_auf_dir_rechte_zu_geben!", Collections.singletonList("admin"));
 		}
 	}
 
